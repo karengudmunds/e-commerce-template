@@ -1,0 +1,80 @@
+--- 
+layout: default
+title:
+---
+
+<!--  This is the shop page  -->
+
+<!--  Featured products  -->
+<section class="grid grid-cols-2 p-2 items-center">  
+
+{% assign ebooks = site.products_ebook %}
+{% assign featuredEbooks = ebooks | where:'featured', 'true' %}
+{% for item in featuredEbooks limit: 1 %}
+
+  <div class="p-2 aspect-square bg-cover bg-center">
+    <img src="{{item.featured_image}}"> </img>
+</div> 
+
+  <div class="p-2">
+    <h1 class="text-2xl"> Featured Products </h1> 
+    <h2> {{item.title}}</h2> 
+    <p>{{ item.description_html}}</p> 
+  </div> 
+
+{% endfor %}
+
+</section> 
+
+<!--  Most popular ebooks  -->
+<section class="grid grid-cols-3 gab-1">
+
+{% for item in featuredEbooks offset: 1 limit:3 %}
+
+  <div class="p-2">
+    <img src="{{item.featured_image}}"> </img>
+  <h2> {{item.title}} </h2>
+  <p> {{item.price}} </p>
+  </div>
+
+  {% endfor %}
+
+  </section>
+
+<!--  Most popular presets  -->
+<section class="grid grid-cols-3 gap-1">
+
+{% for item in site.products_presets %}
+
+  <div class="p-2">
+    <img src="{{item.featured_image}}" ></img>
+  <h2> {{item.title}} </h2>
+  <p> {{item.price}} </p>
+  </div>
+
+  {% endfor %}
+
+</section>
+
+<!--  testimonials  -->
+
+<section class="grid grid-cols-12 text-center"> 
+
+  <div> 
+    <h1> love from our clients </h1> 
+  {% assign testimonials = site.data.testimonials  | where:'product-type', 'preset'%}
+    {% for item in testimonials limit: 1 %}
+
+    <p> {{item.quote}} </p>
+    <h3> {{item.name}}</h3> 
+
+    {% endfor %}
+
+
+  </div> 
+
+
+
+
+</section> 
+

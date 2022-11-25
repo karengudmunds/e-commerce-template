@@ -33,6 +33,19 @@
 
 <body>
     {{content}}
+
+
+    <!-- membership space  -->
+    <script>
+      var MemberSpace = window.MemberSpace || {"subdomain":"ecommerce"};
+      (function(d){
+        var s = d.createElement("script");
+        s.src = "https://cdn.memberspace.com/scripts/widgets.js";
+        var e = d.getElementsByTagName("script")[0];
+        e.parentNode.insertBefore(s,e);
+      }(document));
+      </script> 
+
 </body>
 
 <footer class="p-10 bg-dark md:grid grid-cols-3 text-white">

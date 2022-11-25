@@ -5,3 +5,5 @@
 .button {
     @apply inline-block p-6 bg-blue-600 text-white hover:bg-blue-800 transition;
 }
+
+.bg-dark { background-color: #2A3430; }

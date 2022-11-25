@@ -1,12 +1,12 @@
 --- 
 layout: default
-title:
+title: Shop page
 ---
 
 <!--  This is the shop page  -->
 
 <!--  Featured products  -->
-<section class="grid grid-cols-2 p-2 items-center">  
+<section class="grid grid-cols-2 p-8">  
 
 {% assign ebooks = site.products_ebook %}
 {% assign featuredEbooks = ebooks | where:'featured', 'true' %}
@@ -16,10 +16,11 @@ title:
     <img src="{{item.featured_image}}"> </img>
 </div> 
 
-  <div class="p-2">
-    <h1 class="text-2xl"> Featured Products </h1> 
-    <h2> {{item.title}}</h2> 
-    <p>{{ item.description_html}}</p> 
+  <div class="p-10">
+    <h1 class="text-4xl mb-4"> featured products </h1> 
+    <h2 class="mb-4 text-green-900 uppercase"> {{item.title}}</h2> 
+    <p class="mb-8">{{ item.description_html}}</p> 
+    <a href="{{item.url}}" class="bg-dark text-white px-8 py-3"> Buy now </a> 
   </div> 
 
 {% endfor %}
@@ -27,54 +28,57 @@ title:
 </section> 
 
 <!--  Most popular ebooks  -->
-<section class="grid grid-cols-3 gab-1">
+<section class="grid grid-cols-3 gab-1 p-10">
+
+<h1 class="col-span-full text-center text-4xl p-8"> most popular travel guides </h1> 
 
 {% for item in featuredEbooks offset: 1 limit:3 %}
 
   <div class="p-2">
     <img src="{{item.featured_image}}"> </img>
-  <h2> {{item.title}} </h2>
-  <p> {{item.price}} </p>
-  </div>
+  <h2 class="mt-1 text-xl"> {{item.title}} </h2>
+  <p class="font-extralight"> {{item.price}} </p>
+</div>
 
-  {% endfor %}
+{% endfor %}
+<a href="#"class="col-span-full text-center uppercase"> Explore all travel guides </a> 
 
   </section>
 
 <!--  Most popular presets  -->
-<section class="grid grid-cols-3 gap-1">
+<section class="grid grid-cols-3 gap-1 p-10">
 
-{% for item in site.products_presets %}
+  <h1 class="col-span-full text-center text-4xl p-8"> most popular presets </h1> 
+
+{% for item in site.products_presets limit:3 %}
 
   <div class="p-2">
     <img src="{{item.featured_image}}" ></img>
-  <h2> {{item.title}} </h2>
-  <p> {{item.price}} </p>
+  <h2 class="text-xl tracking-wide"> {{item.title}} </h2>
+  <p class="font-extralight"> {{item.price}} </p>
+  
   </div>
 
   {% endfor %}
 
+  <a href="#" class="col-span-full text-center uppercase"> Explore all presets </a> 
 </section>
 
 <!--  testimonials  -->
 
-<section class="grid grid-cols-12 text-center"> 
+<section class="text-center p-8"> 
 
   <div> 
-    <h1> love from our clients </h1> 
+    <h1 class="text-4xl mb-4"> love from our clients </h1> 
   {% assign testimonials = site.data.testimonials  | where:'product-type', 'preset'%}
     {% for item in testimonials limit: 1 %}
 
-    <p> {{item.quote}} </p>
-    <h3> {{item.name}}</h3> 
+    <p class="text-center max-w-4xl mx-auto"> {{item.quote}} </p>
+    <h3 class="font-extralight"> {{item.name}}</h3> 
 
     {% endfor %}
 
 
   </div> 
-
-
-
-
 </section> 
 

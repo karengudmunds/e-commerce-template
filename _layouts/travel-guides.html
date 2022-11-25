@@ -1,4 +1,79 @@
 --- 
 layout: default
-title: 
+title: Travel Guides 
+---
+
+<!--  Product title  -->
+
+<section class="grid grid-cols-2 p-8">
+  <div> 
+  <img src={{page.featured_image}}> </img> 
+  </div> 
+
+  <div class="p-2">
+    <h1> {{page.title}} </h1> 
+    <p>{{page.description_html}} </p> 
+    <a href="#"> Buy button </a> 
+  </div> 
+
+</section> 
+
+<!-- A sneak peek  / slider need to add javascript to this section  -->
+
+<div class="text-center p-8 bg-slate-200">
+  <h1 class="font-bold text-6xl pb-3"> A sneak peek </h1> 
+  <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit.  </p> 
+</div>
+
+<section class="grid grid-cols-2 bg-slate-200"> 
+
+        {% for slide in page.preview %}
+
+  <div> 
+    <img src='{{slide.featured_image}}' class="p-10"> </img> 
+  </div> 
+
+  <div class="p-10 item-center">
+    <h2> {{slide.title}} </h2> 
+    <p> {{slide.description_html}} </p> 
+  </div> 
+
+  {% endfor %}
+
+</section> 
+
+<!--  book outline  -->
+
+<section class="grid grid-cols-2 p-10 min-h-tall-50"> 
+  <div>
+  <h1> Book outline  </h1> 
+  <h3> Chapter 1 </h3> 
+  <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, rem consectetur, unde corporis nostrum ipsam soluta minus natus sequi dignissimos, quam iste beatae tenetur quae alias laboriosam aperiam nisi </p> 
+  </div> 
+  <div> 
+  <h3> Chapter 1 </h3> 
+  <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, rem consectetur, unde corporis nostrum ipsam soluta minus natus sequi dignissimos, quam iste beatae tenetur quae alias laboriosam aperiam nisi </p>
+  </div> 
+</section>
+
+<!--  Reviews - the word on the street  / slider - plugin from stamped.io-->
+
+<!-- More travel guides you might like... / explore more button -->
+
+
+
+
+<section class="grid grid-cols-4"> 
+
+  {% for item in site.products_ebook limit:4 %}
+
+  <div class="p-2">
+    <img src="{{item.featured_image}}" ></img>
+  <h2> {{item.title}} </h2>
+  <p> {{item.price}} </p>
+  </div>
+
+  {% endfor %}
+
+</section> 
 

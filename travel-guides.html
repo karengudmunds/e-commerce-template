@@ -1,5 +1,105 @@
 ---
 layout: default 
+title: travel guide
+preview:
+  -  featured_image: assets/images/placeholder.jpg
+     title: 10 days of fun in Bali
+     description_html: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, provident. Libero, sequi natus nobis quaerat omnis nemo autem veniam unde aspernatur est neque facilis, blanditiis commodi deleniti modi eos dolorem
 ---
 
 <!--  this is the travel guide pages  -->
+
+<!--  Intro / sales pitch  -->
+  <section class="grid grid-cols-2 p-8">
+    <div> 
+    <img src='assets/images/placeholder.jpg'> </img> 
+    </div> 
+
+    <div class="p-8"> 
+      <h1> Intro / sales pitch </h1> 
+      <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, provident. Libero, sequi natus nobis quaerat omnis nemo autem veniam unde aspernatur est neque facilis, blanditiis commodi deleniti modi eos dolorem?</p> 
+    </div> 
+  </section> 
+
+<!-- Most popular ebooks  -->
+
+<section class="grid grid-cols-3 gap-2 row-span-3 p-8"> 
+
+
+{% for item in site.products_ebook  limit: 9 %}
+
+<!-- <h1> Most popular Travel Guides </h1>  -->
+
+  <div> 
+  <img src={{item.featured_image}}> </img> 
+  <h3> {{item.title }}</h3> 
+  <p> {{item.price}} </p> 
+  </div> 
+
+  {% endfor %}
+
+</section> 
+
+
+<!-- A sneak peek  / slider need to add javascript to this section  -->
+
+<div class="text-center p-8 bg-slate-200">
+  <h1 class="font-bold text-6xl pb-3"> A sneak peek </h1> 
+  <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit.  </p> 
+</div>
+
+<section class="grid grid-cols-2 bg-slate-200"> 
+
+        {% for slide in page.preview %}
+
+  <div> 
+    <img src='{{slide.featured_image}}' class="p-10"> </img> 
+  </div> 
+
+  <div class="p-10 item-center">
+    <h2> {{slide.title}} </h2> 
+    <p> {{slide.description_html}} </p> 
+  </div> 
+
+  {% endfor %}
+
+</section> 
+
+
+<!--  testimonials  -->
+
+<section class="text-center p-8"> 
+
+  <div> 
+    <h1 class="text-4xl mb-4"> love from our clients </h1> 
+  {% assign testimonials = site.data.testimonials  | where:'product-type', 'travel-guides'%}
+    {% for item in testimonials limit: 1 %}
+
+    <p class="text-center max-w-4xl mx-auto"> {{item.quote}} </p>
+    <h3 class="font-extralight"> {{item.name}}</h3> 
+
+    {% endfor %}
+
+  </div> 
+</section> 
+
+<!--  FAQs section  -->
+
+<section class="p-8"> 
+  <h1 class="text-center text-4xl"> FAQ's </h1> 
+  <div> 
+    {% assign faqs = site.data.faqs  | where:'question-type', 'travel-guides'%}
+    {% for item in faqs limit: 1 %}
+
+    <p class="text-center max-w-4xl mx-auto"> {{item.question}} </p>
+    <p class="text-center max-w-4xl mx-auto font-extralight"> {{item.answer}} </p>
+   
+
+    {% endfor %}
+
+  </div> 
+</section> 
+
+
+
+

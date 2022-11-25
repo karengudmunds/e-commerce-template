@@ -6,6 +6,19 @@ module.exports = {
     './*.{html,md}'
   ],
   theme: {
+    minHeight: {
+      'tall-35': '35vh',
+      'tall-50': '50vh',
+      'tall-60': '60vh',
+      'tall-70': '70vh',
+      'tall-80': '80vh',
+      'tall-90': '90vh',
+      'tall-100': '100vh',
+      'tall-110': '110vh',
+    },
+    fontFamily: {
+      sans: [ 'Manrope', 'sans-serif' ],
+   },
     extend: {},
   },
   plugins: [],

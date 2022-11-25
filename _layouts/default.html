@@ -17,20 +17,27 @@
     <title>{{page.title}}</title>
 </head>
 
-<header class="text-center">
-    <a href="/" class="inline-block logo text-6xl p-8">
-      <h2> LOGO </h2>
-    </a>
+<header class="grid grid-cols-3 text-center bg-light p-8">
   <nav>
-    <a href="#" class="p-4 whitespace-nowrap hover:text-green-900"> Link </a>
-    <a href="#" class="p-4 whitespace-nowrap hover:text-green-900"> Link </a>
-    <a href="#" class="p-4 whitespace-nowrap hover:text-green-900"> Link </a>
-    <a href="#" class="p-4 whitespace-nowrap hover:text-green-900"> Link </a>
-    <a href="https://ecommerce.memberspace.com/member/plans/8e340e164p" class="p-4 whitespace-nowrap hover:text-green-900"> member </a>
-   
+    <a href="#" class="p-4 whitespace-nowrap hover:text-green-900 inline-block"> Link </a>
+    <a href="#" class="p-4 whitespace-nowrap hover:text-green-900 inline-block"> Link </a>
+  </nav> 
 
-  </nav>
+    <div>
+      <a href="/">
+        <h2 class="logo"> LOGO </h2>
+      </a>
+    </div>
+    
+    <nav> 
+    <a href="#" class="p-4 whitespace-nowrap hover:text-green-900 inline-block"> Link </a>
+    <a href="#" class="p-4 whitespace-nowrap hover:text-green-900 inline-block"> Link </a>
+    <a href="https://ecommerce.memberspace.com/member/plans/8e340e164p" class="p-4 whitespace-nowrap hover:text-green-900"> member </a>
+    </nav> 
+   
 </header>
+
+
 
 <body>
     {{content}}
@@ -54,30 +61,12 @@
   <div class="p-1">
     <h2 class="text-4xl mb-4 block"> Logo </h2>
     <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    <p> social media links </p>
   </div>
 
 
-  <!-- column -->
-  <div>
-    <h4 class="p-1 font-bold tracking-wide"> read more </h4>
-    <nav>
-      <a href="#" class="p-1 block uppercase text-sm tracking-wide"> Lorem ipsum </a>
-      <a href="#" class="p-1 block uppercase text-sm tracking-wide"> Dolor sit </a>
-      <a href="#" class="p-1 block uppercase text-sm tracking-wide"> Consectetur </a>
-      <a href="#" class="p-1 block uppercase text-sm tracking-wide"> Ut enim ad </a>
-    </nav>
-  </div>
 
-  <!-- column -->
-  <div>
-    <h4 class="p-1 block uppercase font-bold text-sm tracking-wide"> connect </h4>
-    <nav>
-      <a href="#" class="p-1 block uppercase text-sm tracking-wide"> Lorem ipsum </a>
-      <a href="#" class="p-1 block uppercase text-sm tracking-wide"> Dolor sit </a>
-      <a href="#" class="p-1 block uppercase text-sm tracking-wide"> Consectetur </a>
-      <a href="#" class="p-1 block uppercase text-sm tracking-wide"> Ut enim ad </a>
-    </nav>
-  </div>
+
 
 </footer>
 

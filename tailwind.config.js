@@ -19,7 +19,13 @@ module.exports = {
     fontFamily: {
       sans: [ 'Manrope', 'sans-serif' ],
    },
-    extend: {},
+    extend: {
+      aspectRatio: {
+        'landscape': '4/3',
+        'portrait': '3/4',
+        'portrait-tall': '3/5',
+      },
+    },
   },
   plugins: [],
 }

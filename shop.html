@@ -6,13 +6,13 @@ title: Shop page
 <!--  This is the shop page  -->
 
 <!--  Featured products  -->
-<section class="grid grid-cols-2 p-8">  
+<section class="grid grid-cols-2 p-8 bg-light">  
 
 {% assign ebooks = site.products_ebook %}
 {% assign featuredEbooks = ebooks | where:'featured', 'true' %}
 {% for item in featuredEbooks limit: 1 %}
 
-  <div class="p-2 aspect-square bg-cover bg-center">
+  <div class="p-2 aspect-portrait bg-cover bg-center">
     <img src="{{item.featured_image}}"> </img>
 </div> 
 
@@ -28,25 +28,28 @@ title: Shop page
 </section> 
 
 <!--  Most popular ebooks  -->
-<section class="grid grid-cols-3 gab-1 p-10">
+<section class="grid grid-cols-3 gap-1 p-10 bg-light">
 
-<h1 class="col-span-full text-center text-4xl p-8"> most popular travel guides </h1> 
+<h1 class="col-span-full text-center text-4xl p-8 text-zinc-800"> most popular travel guides </h1> 
 
 {% for item in featuredEbooks offset: 1 limit:3 %}
 
   <div class="p-2">
-    <img src="{{item.featured_image}}"> </img>
-  <h2 class="mt-1 text-xl"> {{item.title}} </h2>
-  <p class="font-extralight"> {{item.price}} </p>
+    <img src="{{item.featured_image}}" class="mb-4"> </img>
+    <div class="p-4 relative bg-white -top-4"> 
+  <h2 class="mt-1 text-3xl text-zinc-800"> {{item.title}} </h2>
+  <hr class="border-green-900 w-10 border-t-2 mt-4 mb-2"> 
+  <p class="tracking-wide text-zinc-800"> {{item.price}} </p>
+    </div>
 </div>
 
 {% endfor %}
-<a href="#"class="col-span-full text-center uppercase"> Explore all travel guides </a> 
+<a href="#"class="col-span-full text-center uppercase button w-70 mx-auto"> Explore all travel guides </a> 
 
   </section>
 
 <!--  Most popular presets  -->
-<section class="grid grid-cols-3 gap-1 p-10">
+<section class="grid grid-cols-3 gap-1 p-10 bg-light">
 
   <h1 class="col-span-full text-center text-4xl p-8"> most popular presets </h1> 
 
@@ -54,19 +57,22 @@ title: Shop page
 
   <div class="p-2">
     <img src="{{item.featured_image}}" ></img>
-  <h2 class="text-xl tracking-wide"> {{item.title}} </h2>
-  <p class="font-extralight"> {{item.price}} </p>
+    <div class="p-4 relative bg-white -top-4"> 
+  <h2 class="mt-1 text-3xl text-zinc-800"> {{item.title}} </h2>
+  <hr class="border-green-900 w-10 border-t-2 mt-4 mb-2"> 
+  <p class="tracking-wide text-zinc-800"> {{item.price}} </p>
+    </div> 
   
   </div>
 
   {% endfor %}
 
-  <a href="#" class="col-span-full text-center uppercase"> Explore all presets </a> 
+  <a href="#" class="col-span-full text-center uppercase button w-70 mx-auto"> Explore all presets </a> 
 </section>
 
 <!--  testimonials  -->
 
-<section class="text-center p-8"> 
+<section class="text-center p-8 bg-light min-h-tall-50"> 
 
   <div> 
     <h1 class="text-4xl mb-4"> love from our clients </h1> 

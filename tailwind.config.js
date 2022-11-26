@@ -30,9 +30,9 @@ module.exports = {
       '10p': '10%',
     },
     colors: {
-      'bg-dark': '#2A3430;',
-      'bg-light': '#f2eee9;',
-      'bg-featured': '#e8e1d9;',
+      'dark': '#2A3430;',
+      'light': '#f2eee9;',
+      'featured': '#e8e1d9;',
     },
     },
   },

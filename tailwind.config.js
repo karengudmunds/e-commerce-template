@@ -25,6 +25,15 @@ module.exports = {
         'portrait': '3/4',
         'portrait-tall': '3/5',
       },
+    spacing: {
+      '5p': '5%',
+      '10p': '10%',
+    },
+    colors: {
+      'bg-dark': '#2A3430;',
+      'bg-light': '#f2eee9;',
+      'bg-featured': '#e8e1d9;',
+    },
     },
   },
   plugins: [],

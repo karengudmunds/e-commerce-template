@@ -6,6 +6,3 @@
     @apply inline-block p-4 bg-dark text-white hover:bg-green-900 transition;
 }
 
-.bg-dark { background-color: #2A3430; }
-.bg-light { background-color: #f2eee9;}
-.bg-featured { background-color: #e8e1d9;} 

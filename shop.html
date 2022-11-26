@@ -12,7 +12,7 @@ title: Shop page
 {% assign featuredEbooks = ebooks | where:'featured', 'true' %}
 {% for item in featuredEbooks limit: 1 %}
 
-  <div class="p-2 aspect-portrait bg-cover bg-center">
+  <div class="p-2 aspect-sqare bg-cover bg-center">
     <img src="{{item.featured_image}}"> </img>
 </div> 
 

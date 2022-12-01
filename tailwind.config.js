@@ -18,6 +18,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [ 'Manrope', 'sans-serif' ],
+      serif: [ 'Cabin', 'sans-serif'     ],
    },
     extend: {
       aspectRatio: {

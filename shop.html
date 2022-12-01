@@ -13,11 +13,14 @@ title: Shop page
 {% for item in featuredEbooks limit: 1 %}
 
   <div class="p-2 aspect-sqare bg-cover bg-center">
-    <img src="{{item.featured_image}}"> </img>
+    
+    <div style="background-image">{{item.featured_image}}></div> 
+
+    <!-- <img src="{{item.featured_image}}"> </img> -->
 </div> 
 
   <div class="p-10">
-    <h1 class="text-4xl mb-4"> featured products </h1> 
+    <h1 class="text-3xl mb-4 font-serif"> featured products </h1> 
     <h2 class="mb-4 text-green-900 uppercase"> {{item.title}}</h2> 
     <p class="mb-8">{{ item.description_html}}</p> 
     <a href="{{item.url}}" class="bg-dark text-white px-8 py-3"> Buy now </a> 
@@ -28,11 +31,11 @@ title: Shop page
 </section> 
 
 <!--  Most popular ebooks  -->
-<section class="grid grid-cols-3 gap-1 p-10 bg-light">
+<section class="grid grid-cols-4 gap-1 p-10 bg-light">
 
 <h1 class="col-span-full text-center text-4xl p-8 text-zinc-800"> most popular travel guides </h1> 
 
-{% for item in featuredEbooks offset: 1 limit:3 %}
+{% for item in featuredEbooks offset: 1 limit:4 %}
 
   <div class="p-2">
     <img src="{{item.featured_image}}" class="mb-4"> </img>

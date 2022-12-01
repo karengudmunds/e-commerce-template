@@ -5,6 +5,9 @@ preview:
   -  featured_image: assets/images/placeholder.jpg
      title: 10 days of fun in Bali
      description_html: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, provident. Libero, sequi natus nobis quaerat omnis nemo autem veniam unde aspernatur est neque facilis, blanditiis commodi deleniti modi eos dolorem
+  -  featured_image: assets/images/placeholder.jpg
+     title: 10 days of fun in Bali
+     description_html: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, provident. Libero, sequi natus nobis quaerat omnis nemo autem veniam unde aspernatur est neque facilis, blanditiis commodi deleniti modi eos dolorem
 ---
 
 <!--  this is the travel guide pages  -->
@@ -43,40 +46,47 @@ preview:
 
 <!-- A sneak peek  / slider need to add javascript to this section  -->
 
-<div class="text-center p-8 bg-slate-200">
+<section class="bg-slate-200 pb-3 px-12"> 
+<div class="text-center p-8">
   <h1 class="font-bold text-6xl pb-3"> A sneak peek </h1> 
   <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit.  </p> 
 </div>
 
-<section class="grid grid-cols-2 bg-slate-200"> 
-
+<div class="sneak-peak"> 
         {% for slide in page.preview %}
+    <div class="slide-item">    
+  <div class="grid grid-cols-2">
+    <div> 
+      <img src='{{slide.featured_image}}' class="p-10"> </img> 
+    </div> 
 
-  <div> 
-    <img src='{{slide.featured_image}}' class="p-10"> </img> 
+    <div class="p-10 item-center">
+      <h2> {{slide.title}} </h2> 
+      <p> {{slide.description_html}} </p> 
+    </div> 
   </div> 
-
-  <div class="p-10 item-center">
-    <h2> {{slide.title}} </h2> 
-    <p> {{slide.description_html}} </p> 
   </div> 
 
   {% endfor %}
+
+</div>
 
 </section> 
 
 
 <!--  testimonials  -->
 
-<section class="text-center p-8"> 
+<section class="text-center p-12"> 
 
-  <div> 
-    <h1 class="text-4xl mb-4"> love from our clients </h1> 
+  <h1 class="text-4xl mb-4"> love from our clients </h1> 
   {% assign testimonials = site.data.testimonials  | where:'product-type', 'travel-guides'%}
-    {% for item in testimonials limit: 1 %}
+  <div class="testimonials"> 
+    {% for item in testimonials limit: 2 %}
 
+    <div> 
     <p class="text-center max-w-4xl mx-auto"> {{item.quote}} </p>
     <h3 class="font-extralight"> {{item.name}}</h3> 
+    </div>
 
     {% endfor %}
 
@@ -89,10 +99,10 @@ preview:
   <h1 class="text-center text-4xl"> FAQ's </h1> 
   <div> 
     {% assign faqs = site.data.faqs  | where:'question-type', 'travel-guides'%}
-    {% for item in faqs limit: 1 %}
+    {% for item in faqs limit: 3 %}
 
-    <p class="text-center max-w-4xl mx-auto"> {{item.question}} </p>
-    <p class="text-center max-w-4xl mx-auto font-extralight"> {{item.answer}} </p>
+    <p class="text-center max-w-4xl mx-auto expandButton" data-target-button="{{forloop.index}}"> {{item.question}} </p>
+    <p class="text-center max-w-4xl mx-auto font-extralight collapsed expandable" data-target-more="{{forloop.index}}"> {{item.answer}} </p>
    
 
     {% endfor %}
@@ -100,28 +110,6 @@ preview:
   </div> 
 </section> 
 
-
-<!--  Sneak peak  -->
-<!-- <section class="p-5p bg-light">
-  <div class="max-w-screen-lg mx-auto">
-    <h2 class="mb-0 text-2xl text-center"> a sneak peek </h2>
-    <p class="text-center"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum vel, accusantium nihil incidunt distinctio cum eos unde libero id accusamus. </p> 
-    <div class="slider-container slick-faq-loop slick-intialized slick-slider slick-dotted">
-      <button class="slick-prev slick-arrow" aria-label="previous" type="button" style> =="::before""previous" </button> 
-    </div>
-    <div class="slick-list draggable">
-      <div class="slick-track" style="opacity: 1;" width: 6732px; transform; translate3d(-396px, 0px, 0px);
-      ::before
-    </div> 
-    <div class="slick-item p-8 slick-slide slick-cloned" data-slick-index="-1" id aria-hidden="true" style="width: 396px;" tabindex-="-1">
-      <div class="flex items-center justify-center big-card flex-wrap"> 
-      </div> 
-      <div class="w-full sm:w-7/12 p-8"> </div> 
-      <div class="bg-image aspect-portrait bg-light" style="background-image:url(/assets/images/placeholder.jpg)"> </div>
-    </div> 
-
-  </div> 
-</section>  -->
 
 
 <!--  Text section  -->
@@ -131,7 +119,7 @@ preview:
     <div class="col-span-full p-32 text-center">
       <h2 class="text-4xl md:text-5xl"> This is a heading text box </h2> 
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur beatae iure explicabo ea qui at aliquid, eos earum voluptas sed architecto, obcaecati molestias ab neque quo porro doloremque, recusandae accusantium. </p> 
-      <hr class="mx-auto border-zinc-700">
+      <hr class="mx-auto border-zinc-700 w-10">
     </div> 
 
     <div class="col-span-1 p-4 lg:p-8">

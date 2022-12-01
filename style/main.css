@@ -6,3 +6,18 @@
     @apply inline-block p-4 bg-dark text-white hover:bg-green-900 transition;
 }
 
+
+.slick-next:before, .slick-prev:before {
+  color: black;
+}
+
+.expandable{
+  max-height: 100vh;
+  transition: 0.5s;
+  overflow-y: hidden;
+}
+
+.collapsed {
+  max-height: 0;
+  transition: 1s;
+}
